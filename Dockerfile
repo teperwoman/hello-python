@@ -1,9 +1,7 @@
-FROM python:3.7
-
-RUN mkdir /app
+FROM python:3
 WORKDIR /app
-ADD . /app/
+COPY ./app  .
 RUN pip install -r requirements.txt
-
+RUN ls -alt
 EXPOSE 5000
 CMD ["python", "/app/main.py"]
